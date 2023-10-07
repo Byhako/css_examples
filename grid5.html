@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    section {
+      display: grid;
+      margin: 20px 0;
+    }
+    .auto-fill div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      background-color: #5454ed;
+      border: 1px solid lightblue;
+    }
+    .auto-fill {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    .auto-fit div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      background-color: #ed5478;
+      border: 1px solid lightcoral;
+    }
+    .auto-fit {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+  </style>
+</head>
+<body>
+  <h2>Auto fill</h2>
+  <section class="auto-fill">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </section>
+
+  <hr/>
+  <h2>Auto fit</h2>
+  <section class="auto-fit">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </section>
+</body>
+</html>
