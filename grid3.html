@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    main {
+      display: grid;
+      height: 100dvh;
+      /* grid-gap: 10px; */
+      grid-template-areas: 'header' 'left' 'content' 'right' 'footer';
+    }
+    main > * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #6262f5;
+      border: 1px solid lightblue;
+    }
+    /* nombrar areas */
+    header { grid-area: header; }
+    footer { grid-area: footer; }
+    #left { grid-area: left; }
+    #content { grid-area: content; }
+    #right {grid-area: right; }
+
+    @media only screen and (min-width: 800px) {
+      main {
+        grid-template-areas:
+          'header header right'
+          'left content right'
+          'left footer footer ';
+
+        grid-template-rows: 100px 1fr 80px;
+        grid-template-columns: 20% 60% 20%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>Header</header>
+    <aside id="left">left</aside>
+    <div id="content">content</div>
+    <aside id="right">right</aside>
+    <footer>fotter</footer>
+  </main>
+</body>
+</html>
