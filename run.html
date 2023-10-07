@@ -1,0 +1,90 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --frames: 20;
+    --run-count: 20;
+  }
+
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    height: 500vh;
+    background: hsl(0, 0%, 97%);
+    font-family: smb3;
+  }
+
+  .track {
+    width: 40vmin;
+    aspect-ratio: 1 / 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+
+  .track {
+    transition: scale 0.2s;
+  }
+
+  .runner {
+    height: 100%;
+    aspect-ratio: calc(var(--frames) - 1) / 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    /* timeline */
+    animation: track both linear var(--run-count);
+    animation-timeline: scroll(root);
+    opacity: 0.5;
+    filter: saturate(0.5);
+  }
+
+  @keyframes track {
+    to {
+      translate: calc(-100% + 40vmin) 0;
+    }
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    max-width: 100%;
+    -o-object-position: -100px 0;
+    object-position: -100px 0;
+    -webkit-animation: stop-motion both steps(calc(var(--frames) - 1))
+      var(--run-count);
+    animation: stop-motion both steps(calc(var(--frames) - 1)) var(--run-count);
+    animation-timeline: scroll(root);
+    background: transparent;
+  }
+
+  .runner > img {
+    -webkit-animation: none;
+    animation: none;
+    -o-object-fit: contain;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  @keyframes stop-motion {
+    100% {
+      object-position: 100% 0;
+    }
+  }
+
+</style>
+
+<div class="track">
+  <div class="runner">
+    <img src="https://assets.codepen.io/527512/zelda.webp" alt="" />
+  </div>
+  <img src="https://assets.codepen.io/527512/zelda.webp" alt="" />
+</div>

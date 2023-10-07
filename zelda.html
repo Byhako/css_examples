@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      box-sizing: border-box;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      font-family: sans-serif;
+      background-color: white;
+      color: black;
+    }
+
+    section {
+      max-width: 800px;
+    }
+
+    img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      /* // timeline */
+      view-timeline-name: --image;
+      view-timeline-axis: block;
+      /* // animation */
+      animation-timeline: --image;
+      animation-name: scroll;
+      /* // entrada */
+      animation-range: entry 25% cover 30%;
+      animation-fill-mode: both;
+    }
+
+    @keyframes scroll {
+      from {
+        opacity: 0;
+        scale: 15%;
+      }
+
+      to {
+        opacity: 1;
+        scale: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <h1>The Legend of Zelda</h1>
+  <section>
+    <article>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa necessitatibus ipsam consectetur! Culpa nam aut velit minus officiis, tempora quam ex iure quo, iste magni eum deleniti enim voluptatum sunt.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa necessitatibus ipsam consectetur! Culpa nam aut velit minus officiis, tempora quam ex iure quo, iste magni eum deleniti enim voluptatum sunt.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa necessitatibus ipsam consectetur! Culpa nam aut velit minus officiis, tempora quam ex iure quo, iste magni eum deleniti enim voluptatum sunt.</p>
+      <img src="https://i.etsystatic.com/40317824/r/il/339134/4827441773/il_794xN.4827441773_887m.jpg" alt="">
+    </article>
+    <article>
+      <h3>Lorem ipsum dolor sit amet</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa necessitatibus ipsam consectetur! Culpa nam aut velit minus officiis, tempora quam ex iure quo, iste magni eum deleniti enim voluptatum sunt.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa necessitatibus ipsam consectetur! Culpa nam aut velit minus officiis, tempora quam ex iure quo, iste magni eum deleniti enim voluptatum sunt.</p>
+      <img src="https://i.etsystatic.com/40317824/r/il/339134/4827441773/il_794xN.4827441773_887m.jpg" alt="">
+    </article>
+    <article>
+      <h3>Lorem ipsum dolor sit amet</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa necessitatibus ipsam consectetur! Culpa nam aut velit minus officiis, tempora quam ex iure quo, iste magni eum deleniti enim voluptatum sunt.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa necessitatibus ipsam consectetur! Culpa nam aut velit minus officiis, tempora quam ex iure quo, iste magni eum deleniti enim voluptatum sunt.</p>
+      <img src="https://i.etsystatic.com/40317824/r/il/339134/4827441773/il_794xN.4827441773_887m.jpg" alt="">
+    </article>
+  </section>
+</body>
+</html>

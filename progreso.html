@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --frames: 20;
+      --run-count: 20;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      background: hsl(0, 0%, 97%);
+    }
+
+    .track {
+      transition: scale 0.2s;
+    }
+
+    :root:has(#scale:checked) .track {
+      scale: 0.25;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      top: 1rem;
+      display: inline-block;
+      left: 1rem;
+      aspect-ratio: 1;
+      object-fit: cover;
+      max-width: 100%;
+      object-position: 0 0;
+      animation: stop-motion both steps(calc(var(--frames) - 1)) var(--run-count);
+      animation-timeline: scroll(nearest);
+      background: transparent;
+      translate: -21% 0%;
+    }
+
+    .runner {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      height: 10vh;
+      width: 10vh;
+      border-radius: 50%;
+      background: hsl(0 0% 100% / 0.5);
+      backdrop-filter: blur(1px);
+      display: grid;
+      place-items: center;
+      animation: sprint both linear;
+      animation-timeline: scroll(root);
+    }
+
+    @keyframes sprint {
+      to {
+        translate: calc(100vw - (2rem + 100%)) 0;
+      }
+    }
+
+    main {
+      width: 60ch;
+      max-width: calc(100% - 2rem);
+      margin: 0 auto;
+      padding: 25vh 0;
+    }
+
+    @keyframes stop-motion {
+      100% {
+        object-position: 100% 0;
+      }
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="runner">
+    <img src="https://assets.codepen.io/527512/zelda.webp" />
+  </div>
+  <main>
+    <h1>El Comienzo Mágico</h1>
+    <p>Hace mucho tiempo, antes de que el reino de Hyrule existiera, tres diosas doradas descendieron del cielo: Din, Nayru y Farore. Din, con sus fuertes brazos, creó la tierra. Nayru dio sabiduría y estableció el orden. Farore, con su rica alma, creó todas las formas de vida. Una vez que su trabajo estuvo completo, las diosas dejaron un artefacto sagrado conocido como la Trifuerza, que contenía el poder de las diosas.</p>
+    <p>La princesa Zelda es una descendiente de una antigua línea real que ha gobernado Hyrule durante generaciones. A menudo es la guardiana de la Trifuerza de la Sabiduría. A lo largo de las eras, siempre ha habido un héroe, conocido como Link, que surge cuando Hyrule está en peligro. Aunque Link y Zelda pueden reencarnarse, sus destinos siempre están entrelazados: proteger la Trifuerza y mantener a salvo el reino de Hyrule.</p>
+    <p>Ganon, también conocido como Ganondorf en su forma humana, es el principal antagonista de la serie. Es el portador de la Trifuerza del Poder y constantemente busca obtener las otras dos piezas para dominar el mundo. A lo largo de las eras, ha intentado de diversas maneras apoderarse de Hyrule, ya sea a través de la fuerza bruta, la magia oscura o la manipulación.</p>
+    <p>La historia de Hyrule no es lineal. Debido a eventos en juegos como "Ocarina of Time", la línea temporal se divide en tres: una donde Link es derrotado por Ganon, otra donde Link previene el futuro oscuro como un niño, y una tercera donde Link vence a Ganon y continúa su vida como adulto. Cada línea temporal tiene sus propias aventuras, desafíos y versiones de los personajes principales.</p>
+    <p>A pesar de las victorias y derrotas, la lucha entre el bien y el mal continúa. Cada vez que Hyrule enfrenta una nueva amenaza, un nuevo héroe surge, y con la ayuda de la princesa Zelda, enfrentan al mal para restaurar la paz. Ya sea viajando en el tiempo, navegando por los mares o explorando mundos paralelos, la leyenda perdura.</p>
+    <p>Hace mucho tiempo, antes de que el reino de Hyrule existiera, tres diosas doradas descendieron del cielo: Din, Nayru y Farore. Din, con sus fuertes brazos, creó la tierra. Nayru dio sabiduría y estableció el orden. Farore, con su rica alma, creó todas las formas de vida. Una vez que su trabajo estuvo completo, las diosas dejaron un artefacto sagrado conocido como la Trifuerza, que contenía el poder de las diosas.</p>
+    <p>La princesa Zelda es una descendiente de una antigua línea real que ha gobernado Hyrule durante generaciones. A menudo es la guardiana de la Trifuerza de la Sabiduría. A lo largo de las eras, siempre ha habido un héroe, conocido como Link, que surge cuando Hyrule está en peligro. Aunque Link y Zelda pueden reencarnarse, sus destinos siempre están entrelazados: proteger la Trifuerza y mantener a salvo el reino de Hyrule.</p>
+    <p>Ganon, también conocido como Ganondorf en su forma humana, es el principal antagonista de la serie. Es el portador de la Trifuerza del Poder y constantemente busca obtener las otras dos piezas para dominar el mundo. A lo largo de las eras, ha intentado de diversas maneras apoderarse de Hyrule, ya sea a través de la fuerza bruta, la magia oscura o la manipulación.</p>
+    <p>La historia de Hyrule no es lineal. Debido a eventos en juegos como "Ocarina of Time", la línea temporal se divide en tres: una donde Link es derrotado por Ganon, otra donde Link previene el futuro oscuro como un niño, y una tercera donde Link vence a Ganon y continúa su vida como adulto. Cada línea temporal tiene sus propias aventuras, desafíos y versiones de los personajes principales.</p>
+    <p>A pesar de las victorias y derrotas, la lucha entre el bien y el mal continúa. Cada vez que Hyrule enfrenta una nueva amenaza, un nuevo héroe surge, y con la ayuda de la princesa Zelda, enfrentan al mal para restaurar la paz. Ya sea viajando en el tiempo, navegando por los mares o explorando mundos paralelos, la leyenda perdura.</p>
+  </main>
+</body>
+</html>

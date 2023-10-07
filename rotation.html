@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+    *,
+    *::before,
+    *::after {
+      padding: 0;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --duration: 4s;
+      --count: 42;
+    }
+
+    body {
+      font-family: "Lobster", cursive;
+      background-color: #000;
+      color: #fff;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+
+    
+
+    .rotate {
+      position: relative;
+      color: #17d906;
+      font-size: 118px;
+      filter: blur(2px) contrast(4);
+
+      & > div {
+        position: absolute;
+        width: var(--size);
+        height: var(--size);
+        background-color: #000;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        overflow: hidden;
+        animation: twist --duration var(--delay) infinite ease-in-out;
+
+        &::after {
+          content: "Zelda";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        @keyframes twist {
+          0% {
+            transform: translate(-50%, -50%) rotateZ(0deg);
+          }
+          50%,
+          100% {
+            transform: translate(-50%, -50%) rotateZ(360deg);
+          }
+        }
+
+        
+        @for $i from 0 to --count {
+          &:nth-child(#{$i + 1}) {
+            --size: #{(--count - $i) * 7px};
+            --delay: #{(--duration * 0.5) / --count * (--count - $i)};
+          }
+        }
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="rotate">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>

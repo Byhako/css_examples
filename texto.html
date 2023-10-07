@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    ::view-transition-group(*) {
+      animation-duration: 2s;
+      mix-blend-mode: invert;
+    }
+
+    ::view-transition-old(*) {
+      animation-name: -ua-view-transition-fade-out, scale-down;
+      color: red; /* It’s an image, not text */
+    }
+    ::view-transition-new(*) {
+      animation-name: -ua-view-transition-fade-in, scale-up;
+      text-transform: uppercase; /* It’s an image, not text */
+    }
+
+    @keyframes scale-down {
+      to {
+        scale: 0;
+      }
+    }
+
+    @keyframes scale-up {
+      from {
+        scale: 0;
+      }
+    }
+
+    html,
+    body {
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: grid;
+      place-content: center;
+      font-size: 10vmax;
+    }
+
+    p {
+      user-select: none;
+    }
+
+  </style>
+</head>
+<body>
+  <p>¡En la MiduConf...</p>
+
+  <script>
+    const sentences = [
+      "En esta charla",
+      "hablaremos",
+      "de CSS",
+      "y de animaciones!"
+    ];
+    let index = 0;
+    const nextSentence = () => {
+      document.querySelector("p").innerText = sentences[++index % sentences.length];
+    };
+
+    document.addEventListener("click", (e) => {
+      if (!document.startViewTransition) {
+        nextSentence();
+        return;
+      }
+
+      document.startViewTransition(() => {
+        nextSentence();
+      });
+    });
+
+  </script>
+</body>
+</html>

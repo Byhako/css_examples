@@ -1,0 +1,38 @@
+<style>
+  .moare {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    filter: contrast(2000%);
+    overflow: hidden;
+  }
+  .moare::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    bottom: -50%;
+    left: -50%;
+    right: -50%;
+    background: radial-gradient(circle at center, #333, #fff);
+    background-size: 0.25em 0.25em;
+    transform: rotate(20deg);
+  }
+  .moare img {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    mix-blend-mode: hard-light;
+    filter: grayscale(1) brightness(80%) contrast(150%) blur(2px);
+  }
+</style>
+
+<div class="moare">
+  <img src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/23076afd-aca0-4c99-a8c9-b44d874eca00/width=811/Immagine%202023-01-21%20182642.jpeg" alt="zelda" />
+</div>
